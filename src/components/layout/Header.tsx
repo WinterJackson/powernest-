@@ -43,10 +43,10 @@ export const Header = ({ onMenuClick }: { onMenuClick?: () => void }) => {
               {/* Logo */}
               <Link href={isAdmin ? "/admin" : isSupport ? "/support-staff" : "/"} className="flex items-center gap-2 flex-shrink-0">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-primary/30">
-                  S
+                  P
                 </div>
                 <span className="text-lg sm:text-xl font-bold tracking-tight hidden sm:block">
-                  Safi<span className="text-primary">Power</span>
+                  Power<span className="text-primary">Nest</span>
                 </span>
               </Link>
           </div>

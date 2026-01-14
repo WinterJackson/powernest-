@@ -146,7 +146,7 @@ export default function ProductsPage() {
                                     <div className="space-y-3">
                                         <h4 className="font-bold text-xs uppercase tracking-wider text-muted-foreground">Brands</h4>
                                         <div className="flex flex-wrap gap-2">
-                                            {["Tronic", "Safi", "Victron", "SMA", "Luminous"].map(brand => (
+                                            {["Tronic", "PowerNest", "Victron", "SMA", "Luminous"].map(brand => (
                                                 <Badge key={brand} variant="outline" className="cursor-pointer hover:bg-primary hover:text-white transition-colors px-3 py-1 rounded-lg">
                                                     {brand}
                                                 </Badge>

@@ -66,7 +66,7 @@ export default function SupportPage() {
                     <CardDescription>Westlands, Nairobi</CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <p className="font-bold text-lg">Safi Plaza, 4th Floor</p>
+                    <p className="font-bold text-lg">PowerNest Headquarters, 4th Floor</p>
                 </CardContent>
             </Card>
         </div>
