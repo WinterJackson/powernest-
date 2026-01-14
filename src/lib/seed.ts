@@ -91,7 +91,7 @@ async function main() {
 
     // 3. ADDRESSES (30+ Addresses)
     const addresses = []
-    const clientIds = usersData.filter(u => !u.role || u.role === UserRole.CLIENT).map(u => u.id)
+    const clientIds = usersData.filter(u => !u.role || (u.role as any) === UserRole.CLIENT).map(u => u.id)
     let addrCounter = 1
 
     for (const clientId of clientIds) {
