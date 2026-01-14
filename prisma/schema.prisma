@@ -10,8 +10,8 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  url       = env("PRISMA_DATABASE_URL") // Pooled connection
+  directUrl = env("POSTGRES_URL")      // Direct connection for migrations
 }
 
 // ============================================
@@ -253,6 +253,10 @@ model Product {
   @@index([brandId])
   @@index([status])
   @@index([sku])
+  // Composite Indexes for Performance
+  @@index([status, categoryId])
+  @@index([isFeatured, status])
+  @@index([isNew, status])
   @@map("products")
 }
 
@@ -322,6 +326,7 @@ model Review {
 
   @@index([productId])
   @@index([userId])
+  @@index([productId, isApproved]) // Reviews by product filtered by approval
   @@map("reviews")
 }
 
@@ -416,6 +421,9 @@ model Order {
   @@index([status])
   @@index([paymentStatus])
   @@index([createdAt])
+  // Composite Indexes
+  @@index([userId, status])      // User filtering their orders
+  @@index([status, createdAt])   // Admin sorting orders
   @@map("orders")
 }
 
@@ -488,6 +496,7 @@ model Ticket {
   @@index([assignedToId])
   @@index([status])
   @@index([priority])
+  @@index([status, priority])    // Support staff workflow
   @@map("tickets")
 }
 
