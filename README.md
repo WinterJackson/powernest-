@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PowerNest E-commerce Platform
 
-## Getting Started
+PowerNest is a high-performance, full-stack e-commerce solution built with the latest web technologies. It features a comprehensive suite of tools for customers, support staff, and administrators, designed to deliver a premium user experience and robust backend management.
 
-First, run the development server:
+## 🚀 Teck Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Components**: [Shadcn UI](https://ui.shadcn.com/) / [Radix UI](https://www.radix-ui.com/)
+- **ORM**: [Prisma](https://www.prisma.io/)
+- **Database**: [PostgreSQL (Vercel Postgres)](https://vercel.com/docs/storage/vercel-postgres)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+
+## ✨ Key Features
+
+### 👤 Multi-Role Ecosystem
+- **Customer Portal**: Personalized dashboard, order tracking, and product reviews.
+- **Support Staff Dashboard**: Advanced ticketing system, inventory management, and return processing.
+- **Admin Command Center**: Complete oversight of users, products, orders, and system settings.
+
+### 🛒 E-commerce Engine
+- **Searchable Selectors**: Optimized UI for filtering hospitals, services, and products.
+- **Dynamic Cart**: Real-time cart updates and secure checkout flow.
+- **Flexible Payments**: Support for multiple payment methods, including M-Pesa and Card.
+- **Order Tracking**: Detailed 5-step progress tracking for every order.
+
+### 🛠️ Backend & Security
+- **Robust Schema**: A comprehensive PostgreSQL schema with 23+ models.
+- **Audit Logging**: Comprehensive tracking of all critical system actions for compliance and security.
+- **2FA Support**: Ready for Two-Factor Authentication.
+- **Soft Delete**: Data safety with soft-deletion policies across critical models.
+
+## 📁 Project Structure
+
+```text
+├── prisma/               # Database schema and migrations
+├── public/               # Static assets
+└── src/
+    ├── app/              # Next.js App Router (Pages, Layouts)
+    │   ├── admin/        # Admin dashboard pages
+    │   ├── support-staff/# Staff management pages
+    │   └── auth/         # Authentication flows
+    ├── components/       # Reusable React components
+    │   ├── layout/       # Navigation, Sidebars, Header
+    │   └── ui/           # Shared Shadcn UI components
+    └── lib/              # Utility functions and shared logic
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js 20+
+- PostgreSQL database
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation
 
-## Learn More
+1. **Clone the repository**
+   ```bash
+   git clone git@github.com:WinterJackson/powernest-.git
+   cd powernest-
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Set up environment variables**  
+   Create a `.env` file in the root directory and add your database URL:
+   ```env
+   DATABASE_URL="postgresql://..."
+   DIRECT_URL="postgresql://..."
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. **Initialize the database**
+   ```bash
+   npx prisma generate
+   npx prisma db push
+   ```
 
-## Deploy on Vercel
+5. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is private and for internal use only.
